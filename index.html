@@ -9,16 +9,15 @@
     <h1>Status: <span id="status">off</span></h1>
 
     <script>
-        // Escuta por solicitações GET para alterar o status
+        // Verifica se a URL contém o parâmetro status=on
         window.addEventListener("load", () => {
-            // Verifica se há uma query string (um parâmetro de URL) com o valor `on`
             const urlParams = new URLSearchParams(window.location.search);
             const statusParam = urlParams.get("status");
 
-            // Se o parâmetro de status for "on", muda o texto para "on"
+            // Se o parâmetro de status for "on", exibe apenas o texto "on"
             if (statusParam === "on") {
-                document.getElementById("status").textContent = "on";
-              window.reload()
+                // Escreve apenas "on" na página (para a resposta do Pocket Code)
+                document.body.innerHTML = "on";
             }
         });
     </script>
