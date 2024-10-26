@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status de Conexão</title>
+</head>
+<body>
+    <h1>Status: <span id="status">off</span></h1>
+
+    <script>
+        // Escuta por solicitações GET para alterar o status
+        window.addEventListener("load", () => {
+            // Verifica se há uma query string (um parâmetro de URL) com o valor `on`
+            const urlParams = new URLSearchParams(window.location.search);
+            const statusParam = urlParams.get("status");
+
+            // Se o parâmetro de status for "on", muda o texto para "on"
+            if (statusParam === "on") {
+                document.getElementById("status").textContent = "on";
+              window.reload()
+            }
+        });
+    </script>
+</body>
+</html>
